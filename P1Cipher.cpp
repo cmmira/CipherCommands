@@ -1,9 +1,11 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <cstring>
 using namespace std;
 
 void rot13(istream&, ostream&);
+void GenRanDict(ostream&);
 
 int main(int argc, char *argv[])
 {
@@ -39,6 +41,17 @@ int main(int argc, char *argv[])
         rot13(*in, cout);
         return 0;
     }
+    // Generate Random Caesar Cipher Dictionary "-g"
+    else if(cmd == "-g")
+    {
+        if(argc > 2)
+        {
+            cout << "TOO MANY ARGUMENTS" <<endl;
+            return 0;
+        }
+        GenRanDict(cout);
+        return 0;
+    }
     else
     {
         cout << cmd << "NOT A VALID COMMAND" <<endl;
@@ -70,4 +83,26 @@ void rot13(istream& in, ostream& out)
         }
         out.put(ch);
     }
+}
+
+void GenRanDict(ostream& out)
+{
+    const char *alpha = "abcdefghijklmnopqrstuvwxyz";
+    char gen[26];
+    int nlet = 26;
+
+    strcpy(gen,alpha);
+    srand(time(NULL));
+
+    for(int i=0; i<26;)
+    {
+        int t = rand() %nlet;
+        if(gen[t] == alpha[i]) continue;
+
+        out << alpha[i] << gen[t] <<endl;
+        gen[t] = gen[nlet-1];
+        nlet--;
+        i++;
+    }
+    return;
 }
