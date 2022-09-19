@@ -1,6 +1,6 @@
 # Cipher Commands
-This C++ Program uses Command Line Arguments to read in the commands and optional/required files into the main() function.
-C++ Program with Commands that will perform 4 functions:
+This C++ Program uses Command Line Arguments to read in the commands and files into the main() function.
+The C++ Program has Commands that will perform 4 functions:
 - Perform a Rotation13 substitution
 - Perform a caesar encryption given a dictionary
 - Perform a caesar decryption given a dictionary
