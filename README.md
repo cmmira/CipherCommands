@@ -1,4 +1,4 @@
-#Cipher Commands
+# Cipher Commands
 This C++ Program uses Command Line Arguments to read in the commands and optional/required files into the main() function.
 C++ Program with Commands that will perform 4 functions:
 - Perform a Rotation13 substitution
