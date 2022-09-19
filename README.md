@@ -25,7 +25,7 @@ cd “<CipherCommands File Location>” ; if ($?) { g++ P1Cipher.cpp -o P1Cipher
 ```
 
 ## Rotation 13 Letter Substitution
-Command __”-r”__, rotates each letter 14 positions in the alphabet.
+Command __”-r”__, rotates each letter 13 positions in the alphabet.
 - This command allows an optional second argument which is the name of the file to read from. If not provided, the program will just read from standard input.
 - The output of this command will be generated through standard output.
 
